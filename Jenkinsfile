@@ -13,7 +13,7 @@ pipeline {
               sh "mvn test"
             }
       }          
-      stage('Unit test') {
+      stage('Docker build and Push') {
             steps {
                 withKubeConfig([credentialsId: 'docker-hub']) {
                   sh "printenv"
